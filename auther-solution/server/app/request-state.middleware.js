@@ -3,7 +3,7 @@
 var router = require('express').Router();
 var sessionMiddleware = require('express-session');
 var passport = require('passport');
-var secrets = require('../secrets.js')
+var secrets = require('../../secrets.js')
 
 var User = require('../api/users/user.model');
 
@@ -20,7 +20,7 @@ router.use(function (req, res, next) {
 });
 
 router.use(sessionMiddleware({
-  secret = secrets.sessionSecret
+  secret: secrets.sessionSecret
 }));
 
 /*
